@@ -66,7 +66,9 @@ sample_data/brief_example.json   샘플 브리프
 output_example/                 위 샘플로 실행한 결과 예시 (커밋됨)
 ```
 
-## 보너스 (미구현)
+## 보너스 (구현 완료)
 
-- 경쟁사 분석: `BrandBrief.competitors` 필드는 이미 있으나 분석 로직은 아직 없음
-- 다국어 네이밍: `generate_naming`에 영문 후보 추가하면 확장 가능
+| 보너스 요구사항 | 구현 |
+|---|---|
+| 경쟁사 분석 추가 | `providers/*.analyze_competitors` — `brief.competitors` 각각에 분석+차별화 포인트 생성, `brand_result.json.competitor_analysis`에 저장 |
+| 다국어(영문) 네이밍 | `NamingCandidate.name_en` — mock은 한→영 근사 사전 + 로마자 폴백, openai 구현체는 프롬프트로 `name_en` 함께 요청 |
